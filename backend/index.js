@@ -7,6 +7,7 @@ app.use(cors());
 app.use(express.json());
 
 const db = new sqlite3.Database('./database.sqlite');
+require('./initDB.js'); // Auto-seed database tables in production if missing.
 
 // Admin Login
 app.post('/api/login', (req, res) => {
